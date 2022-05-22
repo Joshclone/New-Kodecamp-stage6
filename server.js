@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 //connection to database
-mongoose.connect('mongodb://localhost:27017/foodbank', {},
+mongoose.connect('mongodb://localhost:27017/kodecampdb', {},
     function (err) {
         if (err) console.log(err);
         console.log("Connected to database successfully");
