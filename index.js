@@ -21,8 +21,9 @@ mongoose.connect('mongodb://localhost:27017/kodecampDB', {},
     });
 
 
+//entry point
 
-app.use(profileRouter);
+app.use('/profile', profileRouter);
 
 
  const port = process.env.PORT || 6000;
