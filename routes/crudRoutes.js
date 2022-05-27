@@ -6,7 +6,7 @@ const app = express();
 //profile = (name, course, year)
 //route handler for getting all profiles
 
-app.get("/profile", async (request, response) => {
+app.get("/", async (request, response) => {
   const profiles = await profileModel.find({});
   try {
     response.send(profiles);
@@ -17,7 +17,7 @@ app.get("/profile", async (request, response) => {
 
 //route handler for a sinhle profile by id
 // get single profile(name. course. year) by id
-app.get("/profile/:id", async (request, response) => {
+app.get("/:id", async (request, response) => {
   const userId = request.params.id;
   profileModel.findById(userId)
     .then((singleProfile) => {
@@ -36,7 +36,7 @@ app.get("/profile/:id", async (request, response) => {
 });
 
 //route handler for post
-app.post("/profile", async (request, response) => {
+app.post("/", async (request, response) => {
   const profile = new profileModel(request.body);
 
   try {
